@@ -6,6 +6,7 @@ import tornado.web
 import handlers
 
 tornadoConfig = [
+	(r"/module/(.*)", handlers.ModuleHandler),
 	(r"/api/", handlers.APIHandler),
 	(r"/api/(.*)", handlers.APIHandler),
 	(r"/(.*)", tornado.web.StaticFileHandler, {"path": r"./static/", "default_filename": "index.html"}),

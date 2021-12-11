@@ -20,11 +20,29 @@
 			<span>File</span>
 			<span>Edit</span>
 		</div>
-		<div id="backend_data">Foo</div>
+		<input id="module_name" type="text" placeholder="Python module to import...">
+		<button id="load_module">Import</button>
+		<div id="modules"></div>
 		<script>
+			/*
 			get_api_data().then((data) => {
 				let element = document.querySelector("#backend_data");
 				element.innerText = JSON.stringify(data, undefined, 2);
+			});
+			*/
+
+			//Request from the server for a module
+			document.getElementById("load_module").addEventListener("click", (e) => {
+				module_name = document.getElementById("module_name").value;
+				document.getElementById("module_name").value = "";
+				
+				import_python_module(module_name).then((module_data) => {
+					document.getElementById("modules").innerText += JSON.stringify(module_data, undefined, 4);
+					document.getElementById("modules").innerText += "\n";
+				}).catch((err) => {
+					console.error(err);
+					alert(err.message);
+				});
 			});
 		</script>
 	</body>
