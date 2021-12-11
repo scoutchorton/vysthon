@@ -1,0 +1,32 @@
+:root {
+	/* Blue shades */
+	--blueprint: midnightblue;
+
+	/* Yellow shades */
+
+	/* Light shades */
+	--backdrop-light: white;
+
+	/* Dark shades */
+	--backdrop-dark: #222222;
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+
+	background: var(--blueprint);
+}
+
+#nav {
+	width: 100%;
+
+	background: var(--backdrop-dark);
+	color: white;
+}
+body.light #nav {
+	background: var(--backdrop-light);
+	color: black;
+}
