@@ -7,12 +7,12 @@
 		<!----------------->
 		<!-- Stylesheets -->
 		<!----------------->
-		<link rel="stylesheet" type="text/css" href="./styles/styles.css" />
+		<link rel="stylesheet" type="text/css" href="styles/styles.css" />
 
 		<!------------->
 		<!-- Scripts -->
 		<!------------->
-		<!-- <script src="scripts/"></script> -->
+		<script src="scripts/networking.js"></script>
 	</head>
 	<body>
 		<div id="nav">
@@ -20,5 +20,12 @@
 			<span>File</span>
 			<span>Edit</span>
 		</div>
+		<div id="backend_data">Foo</div>
+		<script>
+			get_api_data().then((data) => {
+				let element = document.querySelector("#backend_data");
+				element.innerText = JSON.stringify(data, undefined, 2);
+			});
+		</script>
 	</body>
 </html>

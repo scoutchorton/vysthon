@@ -3,8 +3,12 @@ import tornado.ioloop
 import tornado.web
 #import webbrowser
 
+import handlers
+
 tornadoConfig = [
-	(r"/(.*)", tornado.web.StaticFileHandler, {"path": r"./static/", "default_filename": "index.html"})
+	(r"/api/", handlers.APIHandler),
+	(r"/api/(.*)", handlers.APIHandler),
+	(r"/(.*)", tornado.web.StaticFileHandler, {"path": r"./static/", "default_filename": "index.html"}),
 ]
 
 if __name__ == "__main__":
