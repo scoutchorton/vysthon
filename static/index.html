@@ -12,13 +12,40 @@
 		<!------------->
 		<!-- Scripts -->
 		<!------------->
-		<script src="scripts/networking.js"></script>
+		<!-- <script defer type="module" src="scripts/errors.js"></script> -->
+		<!-- <script defer type="module" src="scripts/networking.js"></script> -->
+		<script defer type="module" src="scripts/navigation.js"></script>
 	</head>
 	<body>
 		<div id="nav">
-			<span>Vysthon</span>
-			<span>File</span>
-			<span>Edit</span>
+			<div>
+				<span>Vysthon</span>
+				<ul>
+					<li accelerator="new_project">New Project</li>
+					<li accelerator="load_project">Load Project</li>
+					<li accelerator="save_project">Save Project</li>
+					<hr/>
+					<li accelerator="shutdown">Shutdown</li>
+					<li accelerator="exit">Exit</li>
+				</ul>
+			</div>
+			<div>
+				<span accelerator="toggle_toolbox">Toolbox</span>
+				<ul>
+					<li accelerator="toggle_toolbox">Toggle Toolbox</li>
+				</ul>
+			</div>
+			<div>
+				<span>Project</span>
+				<ul>
+					<li accelerator="import_module">Import Module</li>
+				</ul>
+			</div>
+			<div>
+				<span>Window</span>
+				<ul>
+				</ul>
+			</div>
 		</div>
 		<input id="module_name" type="text" placeholder="Python module to import...">
 		<button id="load_module">Import</button>
@@ -32,11 +59,12 @@
 			*/
 
 			//Request from the server for a module
+			/*
 			document.getElementById("load_module").addEventListener("click", (e) => {
 				module_name = document.getElementById("module_name").value;
 				document.getElementById("module_name").value = "";
 				
-				import_python_module(module_name).then((module_data) => {
+				importPythonModule(module_name).then((module_data) => {
 					document.getElementById("modules").innerText += JSON.stringify(module_data, undefined, 4);
 					document.getElementById("modules").innerText += "\n";
 				}).catch((err) => {
@@ -44,6 +72,7 @@
 					alert(err.message);
 				});
 			});
+			*/
 		</script>
 	</body>
 </html>

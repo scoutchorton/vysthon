@@ -1,11 +1,13 @@
-async function get_api_data() {
+/*
+async function getAPIData() {
 	response = await fetch("/api/foo");
 	return response.json();
 }
+*/
 
-async function import_python_module(module_name) {
+export async function importPythonModule(module_name) {
 	//Fetch data
-	response = await fetch("/module/" + module_name);
+	const response = await fetch("/module/" + module_name);
 
 	//Handle whether the request was successful
 	if(response.ok) {

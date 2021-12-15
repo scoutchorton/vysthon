@@ -1,3 +1,4 @@
+/* Variables */
 :root {
 	/* Blue shades */
 	--blueprint: midnightblue;
@@ -9,25 +10,68 @@
 
 	/* Dark shades */
 	--backdrop-dark: #222222;
+	--backdrop-dark-lighter: #808080;
 }
 
+/* Root reset */
 html, body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
 	width: 100%;
+	font-size: 1.1em;
 
 	background: var(--blueprint);
 	color: lightgray;
+	font-family: Tahoma, Helvetica, sans-serif;
 }
 
+/* Navigation base */
 #nav {
+	box-sizing: border-box;
+	display: flex;
 	width: 100%;
+
+	flex-direction: row;
 
 	background: var(--backdrop-dark);
 	color: white;
+	user-select: none;
 }
 body.light #nav {
 	background: var(--backdrop-light);
 	color: black;
+}
+#nav div {
+	box-sizing: border-box;
+	height: 100%;
+	margin: 0.25em 0;
+
+	background: inherit;
+}
+
+/* Navigation item */
+#nav div span, #nav div ul li {
+	box-sizing: border-box;
+	padding: 0.25em 0.5em;
+	
+	background: inherit;
+	list-style: none;
+}
+#nav div span:hover, #nav div ul li:hover {
+	background: var(--backdrop-dark-lighter);
+}
+
+/* Navigation submenu */
+#nav div ul {
+	display: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	transform: translateY(0.25em);
+
+	background: inherit;
+}
+#nav div:hover ul, #nav div ul:hover {
+	display: block;
 }
