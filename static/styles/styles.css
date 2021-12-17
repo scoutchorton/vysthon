@@ -72,6 +72,6 @@ body.light #nav {
 
 	background: inherit;
 }
-#nav div:hover ul, #nav div ul:hover {
+#nav div:hover ul {
 	display: block;
 }

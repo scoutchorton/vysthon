@@ -13,7 +13,7 @@ class ModuleHandler(tornado.web.RequestHandler):
 		print("Hit module data, importing module ", args[0], len(args))
 
 		#Check that there is a valid module
-		if args[0] == "":
+		if args[0] == "":	
 			self.clear()
 			self.set_status(400, "Bad Request")
 			self.finish("{}")
@@ -32,6 +32,8 @@ class ModuleHandler(tornado.web.RequestHandler):
 		module_data = {}
 		module_members = inspect.getmembers(module)
 		for member in module_members:
-			module_data[member[0]] = type(member[1]).__name__
+			module_data[member[0]] = {
+				"type": type(member[1]).__name__
+			}
 
 		self.write(json.dumps(module_data))
