@@ -8,6 +8,8 @@
 		<!-- Stylesheets -->
 		<!----------------->
 		<link rel="stylesheet" type="text/css" href="styles/styles.css" />
+		<link rel="stylesheet" type="text/css" href="styles/general.css" />
+		<link rel="stylesheet" type="text/css" href="styles/icons.css" />
 
 		<!------------->
 		<!-- Scripts -->
@@ -48,7 +50,14 @@
 			</div>
 		</div>
 		<div id="toolbox-toolbar" class="toolbar right">
-			<span id="toolbar-icon"></span>
+			<ul class="hide-bullets">
+				<li class="ico-py-module ico-left">json</li>
+				<li style="margin-left: 0.5em;" class="ico-py-function ico-left">loads</li>
+				<li class="ico-py-module ico-left">main</li>
+				<li style="margin-left: 0.5em;" class="ico-py-variable ico-left">foo</li>
+				<li class="ico-py-module ico-left">tkinter</li>
+				<li style="margin-left: 0.5em;" class="ico-py-class ico-left">Tk</li>
+			</ul>
 		</div>
 		<!--
 		<input id="module_name" type="text" placeholder="Python module to import...">

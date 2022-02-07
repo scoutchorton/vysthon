@@ -31,6 +31,7 @@ html, body {
 	box-sizing: border-box;
 	display: flex;
 	width: 100%;
+	z-index: 100;
 
 	flex-direction: row;
 
@@ -54,7 +55,8 @@ body.light #nav {
 #nav div span, #nav div ul li {
 	box-sizing: border-box;
 	padding: 0.25em 0.5em;
-	
+	z-index: 100;
+
 	background: inherit;
 	list-style: none;
 }
@@ -74,4 +76,34 @@ body.light #nav {
 }
 #nav div:hover ul {
 	display: block;
+}
+
+/* Toolbar */
+.toolbar {
+	padding: 0.75em;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 10;
+
+	background: var(--backdrop-dark);
+	user-select: none;
+}
+.toolbar.left {
+	left: 0;
+	padding-left: 0;
+
+	border-top-right-radius: 1em;
+	border-bottom-right-radius: 1em;
+}
+.toolbar.right {
+	padding-right: 0;
+	right: 0;
+
+	border-top-left-radius: 1em;
+	border-bottom-left-radius: 1em;
+}
+
+.toolbar > ul {
+	margin: 0;
 }

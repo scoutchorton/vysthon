@@ -1,0 +1,6 @@
+/* Hide bullets from a list */
+ul.hide-bullets, ol.hide-bullets {
+	padding-left: 0;
+
+	list-style-type: none;
+}

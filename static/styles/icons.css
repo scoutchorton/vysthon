@@ -1,0 +1,45 @@
+/* Left/right icon */
+.ico-left, .ico-right {
+	position: relative;
+}
+.ico-left::before, .ico-right::after {
+	height: 1em;
+	position: absolute;
+	width: 1em;
+	z-index: -1;
+
+	background-size: contain;
+	background-repeat: no-repeat;
+	content: " ";
+}
+/* Left icon */
+.ico-left {
+	padding-left: 1.25em;
+}
+.ico-left::before {
+	left: 0;
+}
+/* Right icon */
+.ico-right {
+	padding-right: 1.25em;
+}
+.ico-right::after {
+	right: 0;
+}
+
+/* Python icons */
+.ico-left.ico-py-module::before, .ico-right.ico-py-module::after {
+	background-image: url("/assets/icons/module.svg");
+}
+.ico-left.ico-py-class::before, .ico-right.ico-py-class::after {
+	background-image: url("/assets/icons/class.svg");
+}
+.ico-left.ico-py-function::before, .ico-right.ico-py-function::after {
+	background-image: url("/assets/icons/function.svg");
+}
+.ico-left.ico-py-property::before, .ico-right.ico-py-property::after {
+	background-image: url("/assets/icons/property.svg");
+}
+.ico-left.ico-py-variable::before, .ico-right.ico-py-variable::after {
+	background-image: url("/assets/icons/variable.svg");
+}
